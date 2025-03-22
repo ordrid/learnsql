@@ -1,52 +1,47 @@
-SELECT
+select
 	*
-FROM
+from
 	employee_salary
-WHERE
+where
 	salary <= 50_000;
 
-SELECT
+select
 	*
-FROM
+from
 	employee_demographics
-
-WHERE
+where
 	gender != 'Female';
 
-SELECT
+select
 	*
-FROM
+from
 	employee_demographics
-
-WHERE
+where
 	birth_date > '1985-01-01';
 
 
--- Logical operators (AND, OR, NOT)
-SELECT
+-- Logical operators (and, or, NOT)
+select
 	*
-FROM
+from
 	employee_demographics
-
-WHERE
+where
 	gender != 'Female'
-	OR NOT gender = 'Male'
-;
+	or NOT gender = 'Male';
 
 -- Logical operators follows PEMDAS
-SELECT
+select
 	*
-FROM
+from
 	employee_demographics
+where
+	(first_name = 'Leslie' and age = 44) or age > 55;
 
-WHERE
-	(first_name = 'Leslie' AND age = 44) OR age > 55;
 
-
--- LIKE
-SELECT
+-- like
+select
 	*
-FROM
+from
 	employee_demographics
-WHERE
-	first_name LIKE 'A___%';
+where
+	first_name like 'A___%';

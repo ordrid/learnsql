@@ -1,56 +1,52 @@
 -- Subqueries
 
-SELECT
-	*
-FROM
-	employee_demographics
-WHERE
-	employee_id IN (
-		SELECT
-			employee_id
-		FROM
-			employee_salary
-		WHERE
-			dept_id = 1
-	)
-ORDER BY employee_id;
+select *
+from
+    employee_demographics
+where
+    employee_id in (
+        select employee_id
+        from
+            employee_salary
+        where
+            dept_id = 1
+    )
+order by employee_id;
 
 
-SELECT
-	first_name
-	, salary
-	, (
-		SELECT
-			AVG(salary)
-		FROM
-			employee_salary
-	) AS avg_salary
-FROM
-	employee_salary;
+select
+    first_name
+    , salary
+    , (
+        select avg(salary)
+        from
+            employee_salary
+    ) as avg_salary
+from
+    employee_salary;
 
 
-SELECT
-	gender
-	, AVG(age)
-	, MAX(age)
-	, MIN(age)
-	, COUNT(age)
-FROM
-	employee_demographics
-GROUP BY
-	gender;
+select
+    gender
+    , avg(age)
+    , max(age)
+    , min(age)
+    , count(age)
+from
+    employee_demographics
+group by
+    gender;
 
-SELECT
-	AVG(max_age)
-FROM (
-	SELECT
-		gender
-		, AVG(age) AS avg_age
-		, MAX(age) AS max_age
-		, MIN(age) AS min_age
-		, COUNT(age) AS age_count
-	FROM
-		employee_demographics
-	GROUP BY
-		gender
-	) AS gender_age_data;
+select avg(max_age)
+from (
+    select
+        gender
+        , avg(age) as avg_age
+        , max(age) as max_age
+        , min(age) as min_age
+        , count(age) as age_count
+    from
+        employee_demographics
+    group by
+        gender
+) as gender_age_data;

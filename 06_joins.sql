@@ -1,54 +1,50 @@
 -- JOINS
 
-SELECT *
-FROM employee_demographics;
+select *
+from employee_demographics;
 
-SELECT *
-FROM employee_salary;
+select *
+from employee_salary;
 
 -- INNER JOIN
-SELECT
-	*
-FROM
-	employee_demographics AS ed
-INNER JOIN employee_salary AS es
-	ON ed.employee_id = es.employee_id;
+select *
+from
+    employee_demographics as ed
+inner join employee_salary as es
+    on ed.employee_id = es.employee_id;
 
 -- LEFT OUTER JOIN
-SELECT
-	*
-FROM
-	employee_demographics AS ed
-LEFT OUTER JOIN employee_salary AS es
-	ON ed.employee_id = es.employee_id;
+select *
+from
+    employee_demographics as ed
+left outer join employee_salary as es
+    on ed.employee_id = es.employee_id;
 
 -- RIGHT OUTER JOIN
-SELECT
-	*
-FROM
-	employee_demographics AS ed
-RIGHT OUTER JOIN employee_salary AS es
-	ON ed.employee_id = es.employee_id;
+select *
+from
+    employee_demographics as ed
+right outer join employee_salary as es
+    on ed.employee_id = es.employee_id;
 
 -- SELF JOIN
-SELECT
-	es1.employee_id AS employee_santa
-	, es1.first_name AS first_name_santa
-	, es1.last_name AS last_name_santa
-	, es2.employee_id AS employee_receiver
-	, es2.first_name AS first_name_receiver
-	, es2.last_name AS last_name_receiver
-FROM
-	employee_salary AS es1
-JOIN employee_salary AS es2
-	ON es1.employee_id + 1 = es2.employee_id;
+select
+    es1.employee_id as employee_santa
+    , es1.first_name as first_name_santa
+    , es1.last_name as last_name_santa
+    , es2.employee_id as employee_receiver
+    , es2.first_name as first_name_receiver
+    , es2.last_name as last_name_receiver
+from
+    employee_salary as es1
+join employee_salary as es2
+    on es1.employee_id + 1 = es2.employee_id;
 
 -- JOINING MULTIPLE TABLES
-SELECT
-	*
-FROM
-	employee_demographics AS ed
-INNER JOIN employee_salary AS es
-	ON ed.employee_id = es.employee_id
-INNER JOIN parks_departments pd
-	ON es.dept_id = pd.department_id;
+select *
+from
+    employee_demographics as ed
+inner join employee_salary as es
+    on ed.employee_id = es.employee_id
+inner join parks_departments pd
+    on es.dept_id = pd.department_id;

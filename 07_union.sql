@@ -1,43 +1,42 @@
-SELECT
+select
 	first_name
 	, last_name
-FROM
+from
 	employee_demographics
-UNION ALL -- DISTINCT by default
-SELECT
+union all -- distinct by default
+select
 	first_name
 	, last_name
-FROM
+from
 	employee_salary;
 
-SELECT
+select
 	first_name
 	, last_name
-	, 'old (male)' AS label
-FROM
+	, 'old (male)' as label
+from
 	employee_demographics
-WHERE
+where
 	age > 40
-	AND gender = 'Male'
-UNION
-SELECT
+	and gender = 'Male'
+union
+select
 	first_name
 	, last_name
-	, 'old (female)' AS label
-FROM
+	, 'old (female)' as label
+from
 	employee_demographics
-WHERE
+where
 	age > 40
-	AND gender = 'Female'
-UNION
-SELECT
+	and gender = 'Female'
+union
+select
 	first_name
 	, last_name
-	, 'highly paid' AS label
-FROM
+	, 'highly paid' as label
+from
 	employee_salary
-WHERE salary > 70_000
-ORDER BY
+where salary > 70_000
+order by
 	first_name
-	, last_name
-;
+	, last_name;

@@ -1,19 +1,18 @@
-SELECT
-	*
-FROM
-	public.employee_demographics;
+select *
+from
+    public.employee_demographics;
 
-SELECT
-	first_name
-	, last_name
-	, birth_date
-	, age
-	, age + 10 AS ten_years_later
-FROM
-	employee_demographics;
+select
+    first_name
+    , last_name
+    , birth_date
+    , age
+    , age + 10 as ten_years_later
+from
+    employee_demographics;
 
-SELECT DISTINCT
-	first_name
-	, gender
-FROM
-	employee_demographics;
+select distinct
+    first_name
+    , gender
+from
+    employee_demographics;

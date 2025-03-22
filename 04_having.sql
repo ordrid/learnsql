@@ -1,23 +1,21 @@
-SELECT
+select
 	gender
-	, AVG(age)
-FROM
+	, avg(age)
+from
 	employee_demographics
-GROUP BY
+group by
 	gender
-HAVING
-	AVG(age) > 40;
+having
+	avg(age) > 40;
 
-SELECT
+select
 	occupation
-	, AVG(salary)
-FROM
+	, avg(salary)
+from
 	employee_salary
-WHERE
+where
 	occupation LIKE '%Manager%'
-GROUP BY
+group by
 	occupation
-HAVING
-	AVG(salary) > 75_000
-;
-
+having
+	avg(salary) > 75_000;

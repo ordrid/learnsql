@@ -1,63 +1,63 @@
 -- String functions
 
-SELECT LENGTH('skyfall');
+select length('skyfall');
 
-SELECT
-	first_name
-	, LENGTH(first_name) AS first_name_length
-FROM
-	employee_demographics
-ORDER BY
-	first_name_length;
-
-
-SELECT UPPER('sky');
-SELECT LOWER('SKY');
-
-SELECT
-	first_name
-	, UPPER(first_name) AS first_name_uppercase
-FROM
-	employee_demographics;
-
-SELECT
-	first_name
-	, LOWER(first_name) AS first_name_lowercase
-FROM
-	employee_demographics;
-
-SELECT TRIM('     sky    ') AS trimmed_sky;
-SELECT LTRIM('     sky    ') AS left_trimmed_sky;
-SELECT RTRIM('     sky    ') AS right_trimmed_sky;
+select
+    first_name
+    , length(first_name) as first_name_length
+from
+    employee_demographics
+order by
+    first_name_length;
 
 
-SELECT
-	first_name
-	, LEFT(first_name, 4) AS first_four
-	, RIGHT(first_name, 4) AS last_four
-	, SUBSTRING(first_name, 3, 2)
-	, birth_date
-	, SUBSTRING(birth_date::TEXT, 6, 2) AS birth_month
-FROM
-	employee_demographics;
+select upper('sky');
+select lower('SKY');
 
-SELECT
-	first_name
-	, REPLACE(first_name, 'a', 'z') AS zname
-FROM
-	employee_demographics;
+select
+    first_name
+    , upper(first_name) as first_name_uppercase
+from
+    employee_demographics;
 
-SELECT POSITION('X' IN 'ALEXANDER X');
+select
+    first_name
+    , lower(first_name) as first_name_lowercase
+from
+    employee_demographics;
 
-SELECT 
-	first_name
-	, POSITION('An' IN first_name)
-FROM
-	employee_demographics;
+select trim('     sky    ') as trimmed_sky;
+select ltrim('     sky    ') as left_trimmed_sky;
+select rtrim('     sky    ') as right_trimmed_sky;
 
-SELECT 
-	first_name
-	, last_name
-	, CONCAT(first_name, ' ', last_name) AS full_name
-FROM
-	employee_demographics;
+
+select
+    first_name
+    , left(first_name, 4) as first_four
+    , right(first_name, 4) as last_four
+    , substring(first_name, 3, 2)
+    , birth_date
+    , substring(birth_date::text, 6, 2) as birth_month
+from
+    employee_demographics;
+
+select
+    first_name
+    , replace(first_name, 'a', 'z') as zname
+from
+    employee_demographics;
+
+select position('X' in 'ALEXANDER X');
+
+select
+    first_name
+    , position('An' in first_name)
+from
+    employee_demographics;
+
+select
+    first_name
+    , last_name
+    , concat(first_name, ' ', last_name) as full_name
+from
+    employee_demographics;

@@ -1,36 +1,35 @@
-SELECT
-	gender
-	, AVG(age)
-FROM
-	employee_demographics
-GROUP BY
-	gender;
+select
+    gender
+    , avg(age)
+from
+    employee_demographics
+group by
+    gender;
 
-SELECT
-	occupation
-	, salary
-FROM
-	employee_salary
-GROUP BY
-	occupation
-	, salary
+select
+    occupation
+    , salary
+from
+    employee_salary
+group by
+    occupation
+    , salary
 ;
 
-SELECT
-	gender
-	, MAX(age)
-	, MIN(age)
-	, COUNT(age)
-FROM
-	employee_demographics
-GROUP BY
-	gender;
+select
+    gender
+    , max(age)
+    , min(age)
+    , count(age)
+from
+    employee_demographics
+group by
+    gender;
 
 
-SELECT
-	*
-FROM
-	employee_demographics
-ORDER BY
-	gender
-	, age;
+select *
+from
+    employee_demographics
+order by
+    gender
+    , age;
